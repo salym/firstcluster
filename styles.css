@@ -23,11 +23,13 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
+    overflow: hidden;
+
 }
 
 /* Loading spinner wrapper */
 .wrapper {
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,8 +93,8 @@ body {
 
 .logo {
     position: fixed;
-    bottom: 3em;
-    left: 3em;
+    bottom: 2em;
+    left: 2em;
     font-family: var(--font-family);
     font-size: 1.2em;
     color: var(--primary-color);
@@ -109,34 +111,10 @@ body {
     top: 400px;
     left: 50%;
     font-family: var(--font-family);
-    font-size: 2em;
+    font-size: 1.8em;
     color: var(--secondary-color);
     text-shadow:
         1px 1px 3px var(--shadow-light),
         -1px -1px 3px var(--shadow-dark);
     white-space: nowrap;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .logo {
-        font-size: 1.1em;
-        bottom: 2em;
-        left: 2em;
-    }
-
-    .coming-soon {
-        font-size: 1.8em;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .wrapper {
-        height: 250px;
-        width: 250px;
-    }
-
-    .title {
-        font-size: 2.2em;
-    }
 }
