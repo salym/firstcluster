@@ -1,0 +1,142 @@
+/* salym.me */
+
+:root {
+    --primary-color: #BBD6B8;
+    --secondary-color: #94AF9F;
+    --text-color: #DBE4C6;
+    --spinner-gradient: linear-gradient(45deg, #89A8B2, #B3C8CF);
+    --shadow-light: rgba(225, 240, 218, 1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --font-family: 'Avenir', sans-serif;
+}
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+/* Loading spinner wrapper */
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 
+        inset 2px 2px 9px var(--shadow-light),
+        inset -2px -2px 9px var(--shadow-dark);
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 
+        2px 2px 9px var(--shadow-light),
+        -2px -2px 9px var(--shadow-dark);
+}
+
+/* Spinner animation */
+.spinner {
+    height: 186px;
+    width: 220px;
+    position: absolute;
+    animation: rotate 15s linear infinite;
+}
+
+.spinner::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: var(--spinner-gradient);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Typography */
+.title {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    font-family: var(--font-family);
+    font-size: 2.7em;
+    color: var(--text-color);
+    text-shadow:
+        -1px -1px 3px var(--shadow-light),
+        1px 1px 3px var(--shadow-dark);
+}
+
+.logo {
+    position: fixed;
+    bottom: 3em;
+    left: 3em;
+    font-family: var(--font-family);
+    font-size: 1.2em;
+    color: var(--primary-color);
+    text-shadow:
+        -1px -1px 2px var(--shadow-light),
+        1px 1px 2px var(--shadow-dark);
+    z-index: 100;
+}
+
+.coming-soon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 400px;
+    left: 50%;
+    font-family: var(--font-family);
+    font-size: 2em;
+    color: var(--secondary-color);
+    text-shadow:
+        1px 1px 3px var(--shadow-light),
+        -1px -1px 3px var(--shadow-dark);
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.1em;
+        bottom: 2em;
+        left: 2em;
+    }
+
+    .coming-soon {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        height: 250px;
+        width: 250px;
+    }
+
+    .title {
+        font-size: 2.2em;
+    }
+}
